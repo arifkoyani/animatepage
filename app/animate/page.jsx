@@ -17,7 +17,7 @@ const ScrollAnimation = () => {
     const cycle = Math.floor(scrolled / 30) % 2;
 
     if (cycle === 0) {
-      setTranslateValue(-30);
+      setTranslateValue(-40);
       setSkewValue({ x: 5, y: 5 });
       setShowContentA(false);
     } else {
@@ -101,25 +101,26 @@ const ScrollAnimation = () => {
         </div>
         <div className=" bg-transparent h-[200px] flex justify-end">
           <div className="flex w-[40%]">
-            <p className="text-sm text-white">
+            {/* <p className="text-sm text-white">
               No matter which data structure is the best for your <br />{" "}
               business, you can easily define models and <br /> add relations to
               create rich layout experiences.
-            </p>
+            </p> */}
           </div>
         </div>
         <div className=" bg-transparent h-[200px] flex justify-end">
           <div className="flex w-fit text-white">
             <p>
-              Lorem ipsum dolor<br /> sit amet consectetur adipisicing elit. Repellat
+              {/* Lorem ipsum dolor<br /> sit amet consectetur adipisicing elit. Repellat
               soluta ullam, vero nulla<br /> neque veniam quae explicabo corrupti ipsa
               doloremque pariatur<br /> consectetur. Possimus dolores esse nihil
-              aliquid deserunt tempora dolore.
+              aliquid deserunt tempora dolore. */}
             </p>
           </div>
         </div>{" "}
         <div className=" bg-transparent h-[200px] flex justify-end">
           <div className="flex w-[30%] text-black">
+          <div class="w-0 h-0 border-l-[150px] border-l-transparent border-r-[150px] border-r-transparent border-b-[200px] border-b-[#4f46e5]"></div>
          
 
           </div>
@@ -166,6 +167,7 @@ const ScrollAnimation = () => {
               any content types.
             </p>
           </div>
+          
         </div>{" "}
 
         <div className=" bg-transparent h-[200px] flex justify-start">
@@ -238,6 +240,10 @@ const ScrollAnimation = () => {
             <p className="text-xl font-bold text-black">
               Consume Strapi API from any <br /> client using REST or GraphQL.
             </p>
+          </div>
+          <div>
+          <div class="w-0 h-0 border-l-[150px] border-l-transparent border-r-[150px] border-r-transparent border-b-[200px] border-b-[#4f46e5]"></div>
+
           </div>
         </div>{" "}
 
