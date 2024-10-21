@@ -3,27 +3,48 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import ContentTypeCardA from "../cards/CardA/page";
 import ContentFormCard from "../cards/CardB/page";
+import ServiceCards from "../cards/CardC/page";
+import CodingCard from "../cards/CardD/page";
+import Image from "next/image";
 
 const ScrollAnimation = () => {
-  const [translateValue, setTranslateValue] = useState(-30);
+  const [translateValue, setTranslateValue] = useState(-40);
   const [skewValue, setSkewValue] = useState({ x: 0, y: 0 });
   const [showContentA, setShowContentA] = useState(true);
+  const [showServiceCards, setShowServiceCards] = useState(false);
+  const [showCodingCard, setShowCodingCard] = useState(false);
 
   const handleScroll = () => {
     const totalScrollHeight =
       document.documentElement.scrollHeight - window.innerHeight;
     const scrolled = (window.scrollY / totalScrollHeight) * 100;
 
-    const cycle = Math.floor(scrolled / 30) % 2;
+    const cycle = Math.floor(scrolled / 30);
 
     if (cycle === 0) {
       setTranslateValue(-40);
       setSkewValue({ x: 5, y: 5 });
+      setShowContentA(true);
+      setShowServiceCards(false);
+      setShowCodingCard(false);
+    } else if (cycle === 1) {
+      setTranslateValue(0);
+      setSkewValue({ x: -5, y: -5 });
       setShowContentA(false);
+      setShowServiceCards(false);
+      setShowCodingCard(false);
+    } else if (cycle === 2) {
+      setTranslateValue(-40);
+      setSkewValue({ x: 5, y: 5 });
+      setShowContentA(false);
+      setShowServiceCards(true);
+      setShowCodingCard(false);
     } else {
       setTranslateValue(0);
       setSkewValue({ x: -5, y: -5 });
-      setShowContentA(true);
+      setShowContentA(false);
+      setShowServiceCards(false);
+      setShowCodingCard(true);
     }
   };
 
@@ -33,10 +54,11 @@ const ScrollAnimation = () => {
   }, []);
 
   return (
-    <div className="bg-transparent h-[4000px] text-white ">
+    <div className="bg-transparent h-[4000px] text-white "
+    >
       <div className="sticky top-[150px] bg-transparent">
         <motion.div
-          className="w-[200px]  h-[300px] mx-auto shadow-xl rounded-lg transform translate-x-10 skew-x-6 skew-y-2 text-gray-900"
+          className="w-[200px] h-[300px] mx-auto shadow-xl rounded-lg transform translate-x-10 skew-x-6 skew-y-2 text-gray-900"
           animate={{
             x: `${translateValue}vw`,
             skewX: skewValue.x,
@@ -49,19 +71,30 @@ const ScrollAnimation = () => {
             mass: 1,
           }}
         >
-         
-          {showContentA ? <ContentTypeCardA /> : <ContentFormCard />}
+          {showContentA && <ContentTypeCardA />}
+          {!showContentA && !showServiceCards && !showCodingCard && <ContentFormCard />}
+          {showServiceCards && <ServiceCards />}
+          {showCodingCard && <CodingCard />}
+
+
+
+
         </motion.div>
- 
-
-
-
 
       </div>
       <section>
         <div className=" bg-transparent h-[200px] flex justify-end">
           <div className="flex w-[40%]">
-            <p className="text-2xl text-black">
+            <p className="text-2xl text-black"
+            
+            style={{ 
+              color: 'black', 
+              fontSize: '18px', 
+              margin: 0 ,
+              fontFamily:"poppins",
+              fontWeight:"bold"
+            }}
+            >
               Effortlessly create content structures<br/> that flex to your needs.
             </p>
           </div>
@@ -69,7 +102,14 @@ const ScrollAnimation = () => {
         <div className=" bg-transparent h-[200px] flex justify-between">
         
 
-          <div class="w-0 h-0 border-l-[150px] border-l-transparent border-r-[150px] border-r-transparent border-b-[200px] border-b-[#4f46e5]"></div>
+        <div>
+      <Image src="/shaoe.png"
+      width={300}
+      height={300}
+      alt="hello"
+      />
+    </div>
+     
 
 
           <div className="flex w-[40%]">
@@ -82,7 +122,12 @@ const ScrollAnimation = () => {
         </div>
         <div className=" bg-transparent text-black h-[200px] flex justify-end">
           <div className="flex w-[40%]">
-            <p className="text-2xl">
+            <p className="text-2xl "
+    style={{fontFamily:"poppins",
+      fontWeight:"bold"
+    }}
+            
+            >
               Effortlessly create content structures <br />
               that flex to your needs.
             </p>
@@ -90,7 +135,10 @@ const ScrollAnimation = () => {
         </div>
         <div className=" bg-transparent h-[200px] flex justify-end">
           <div className="flex w-[40%]">
-            <p className="text-sm  text-black">
+            <p className="text-sm  text-black"
+    style={{fontFamily:"poppins"}}
+            
+            >
               <span className="text-orange-400 mb-12  font-extrabold">Step 1</span>
               <br />
               No matter which data structure is the best for your <br />{" "}
@@ -120,7 +168,13 @@ const ScrollAnimation = () => {
         </div>{" "}
         <div className=" bg-transparent h-[200px] flex justify-end">
           <div className="flex w-[30%] text-black">
-          <div class="w-0 h-0 border-l-[150px] border-l-transparent border-r-[150px] border-r-transparent border-b-[200px] border-b-[#4f46e5]"></div>
+          <div>
+      <Image src="/Right.png"
+      width={300}
+      height={300}
+      alt="hello"
+      />
+    </div>
          
 
           </div>
@@ -128,7 +182,16 @@ const ScrollAnimation = () => {
 
         <div className=" bg-transparent h-[200px] flex justify-start">
           <div className="flex w-[40%] pl-12 font-bold">
-            <p className="text-2xl text-black">
+            <p className="text-2xl text-black"
+            
+            style={{ 
+              color: 'black', 
+              fontSize: '18px', 
+              margin: 0 ,
+              fontFamily:"poppins",
+              fontWeight:"bold"
+            }}
+            >
               Seamlessly write, edit and manage <br />
               any content types.
             </p>
@@ -172,13 +235,23 @@ const ScrollAnimation = () => {
 
         <div className=" bg-transparent h-[200px] flex justify-start">
           <div className="flex w-[30%]">
-          <div class="w-0 h-0 border-l-[150px] border-l-transparent border-r-[150px] border-r-transparent border-b-[200px] border-b-[#4f46e5]"></div>
+          <div>
+      <Image src="/shaoe.png"
+      width={300}
+      height={500}
+      alt="hello"
+      />
+    </div>
           </div>
         </div>{" "}
 
         <div className=" bg-transparent h-[200px] flex justify-end">
           <div className="flex w-[40%]">
-            <p className="text-xl text-black">
+            <p className="text-xl text-black" 
+              style={{fontFamily:"poppins",
+                fontWeight:"bold"
+              }}
+            >
               Easily build apps and digital<br /> experiences <br /> without the
               distraction of CMS complexities.
             </p>
@@ -242,7 +315,7 @@ const ScrollAnimation = () => {
             </p>
           </div>
           <div>
-          <div class="w-0 h-0 border-l-[150px] border-l-transparent border-r-[150px] border-r-transparent border-b-[200px] border-b-[#4f46e5]"></div>
+  
 
           </div>
         </div>{" "}

@@ -5,22 +5,24 @@ const InfoBar = () => {
     <div style={{ 
       backgroundColor: 'white', 
       textAlign: 'center', 
-      padding: '50px 0', 
+      padding: '100px 0', 
       fontFamily: 'Arial, sans-serif' 
     }}>
      <h2 style={{ 
   color: '#030f97', 
-  fontSize: '32px', 
+  fontSize: '42px', 
   marginBottom: '10px', 
-  fontWeight: 'bold' // or use '700' for bold
+  fontWeight: 'bold' ,
+  fontFamily:"poppins",
+  fontWeight:"bold"// or use '700' for bold
 }}>
   How does it work?
 </h2>
-
       <p style={{ 
         color: '#5D5D6C', 
-        fontSize: '18px', 
-        margin: 0 
+        fontSize: '14px', 
+        margin: 0 ,
+        fontFamily:"poppins"
       }}>
         Make a flexible data structure in 2 minutes.<br />
         Use our powerful features to customize your API.
