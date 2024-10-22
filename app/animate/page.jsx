@@ -54,9 +54,9 @@ const ScrollAnimation = () => {
   }, []);
 
   return (
-    <div className="bg-transparent h-[4000px] text-white "
+    <div className="bg-transparent h-[4000px] text-transparent "
     >
-      <div className="sticky top-[150px] bg-transparent">
+      <div className="sticky top-[100px] bg-transparent">
         <motion.div
           className="w-[200px] h-[300px] mx-auto shadow-xl rounded-lg transform translate-x-10 skew-x-6 skew-y-2 text-gray-900"
           animate={{
@@ -92,7 +92,8 @@ const ScrollAnimation = () => {
               fontSize: '18px', 
               margin: 0 ,
               fontFamily:"poppins",
-              fontWeight:"bold"
+              fontWeight:"bold",
+              
             }}
             >
               Effortlessly create content structures<br/> that flex to your needs.
@@ -124,7 +125,8 @@ const ScrollAnimation = () => {
           <div className="flex w-[40%]">
             <p className="text-2xl "
     style={{fontFamily:"poppins",
-      fontWeight:"bold"
+      fontWeight:"bold",
+         
     }}
             
             >
@@ -189,7 +191,8 @@ const ScrollAnimation = () => {
               fontSize: '18px', 
               margin: 0 ,
               fontFamily:"poppins",
-              fontWeight:"bold"
+              fontWeight:"bold",
+                 
             }}
             >
               Seamlessly write, edit and manage <br />
@@ -249,7 +252,8 @@ const ScrollAnimation = () => {
           <div className="flex w-[40%]">
             <p className="text-xl text-black" 
               style={{fontFamily:"poppins",
-                fontWeight:"bold"
+                fontWeight:"bold",
+                   
               }}
             >
               Easily build apps and digital<br /> experiences <br /> without the
@@ -310,7 +314,9 @@ const ScrollAnimation = () => {
 
         <div className="bg-transparent h-[200px] flex justify-start pl-12">
           <div className="flex w-[50%]">
-            <p className="text-xl font-bold text-black">
+            <p className="text-xl font-bold text-black"
+         
+            >
               Consume Strapi API from any <br /> client using REST or GraphQL.
             </p>
           </div>
